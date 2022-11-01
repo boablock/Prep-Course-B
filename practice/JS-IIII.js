@@ -109,7 +109,17 @@ function sumarLikesDeUsuario (usuario) {
   // producto.precio -> 20
   // producto.porcentajeDeDescuento -> 0.2 (o simplemente ".2")
   // producto.calcularPrecioDescuento() -> 20 - (20 * 0.2)
-  // Tu código:
+  // example:
+/*
+  const producto = {
+    precio: 100,
+    porcentajeDeDescuento: 0.2,
+    calcularPrecioDescueto: function(){
+      return this.precio - (this.precio * this.porcentajeDeDescuento)
+    }
+  }
+*/
+//tu codigo:
 function agregarMetodoCalculoDescuento (producto) {
   producto.calcularPrecioDescuento = function (){
     return producto.precio - (producto.precio * producto.porcentajeDeDescuento);
