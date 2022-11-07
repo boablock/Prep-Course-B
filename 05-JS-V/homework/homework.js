@@ -10,18 +10,19 @@ function crearUsuario() {
   // Tu código:
   class Usuario {
     constructor(opciones) {
+      console.log(opciones);
       this.usuario = opciones.usuario;
       this.nombre = opciones.nombre;
       this.email = opciones.email;
       this.password = opciones.password
     }
-    // saludar(){
-      //     return `Hola, mi nombre es ${this.nombre}`;
-      //   }
+    saludar(){ //--> with the class sintax, the method is assigned to the prototype directly 
+          return `Hola, mi nombre es ${this.nombre}`;
+        }
     }
-    Usuario.prototype.saludar = function(){
-      return `Hola, mi nombre es ${this.nombre}`;
-    }
+    // Usuario.prototype.saludar = function(){
+    //   return `Hola, mi nombre es ${this.nombre}`;
+    // }
     
   return Usuario;
 }
@@ -30,6 +31,7 @@ function agregarMetodoPrototype(Constructor) {
   // Agrega un método al Constructor del `prototype`
   // El método debe llamarse "saludar" y debe devolver la string "Hello World!"
   // Tu código:
+  console.log('------------> constructor', Constructor);
   Constructor.prototype.saludar = function(){
     return "Hello World!"; 
   }
@@ -71,7 +73,7 @@ function agregarStringInvertida() {
       this.edad = edad;
       this.domicilio = domicilio;
     }
-    detalle(){
+    get detalle(){
       return {
         nombre: this.nombre,
         apellido: this.apellido,

@@ -1,5 +1,9 @@
 
 
+
+
+//----------John Mircha----------  
+
 //POO
 /**
  * - Classes --> modelo a seguir 
@@ -10,20 +14,27 @@
  */
 // CLASS-> MECHANISM BY WITCH AN OBJECT MAY INHERIT (FROM FATHER OBJECT) ATRIBUTES (CARACTERISTIC) AND METHODS (FUNCTIONS)
 
+/*
 
 //--LITERAL OBJECT--
 const animal = {
   nombre: 'Lala',
   sonar(){
     console.log('I make sounds causa im alive');
+  },
+  saludar(){
+    console.log(`Hola me llamo ${this.name}`);
   }
 }
-
 const animal2 = {
   nombre: 'Akiva',
   sonar(){
     console.log(' make sounds causa im alive');
-  }
+  },
+  saludar(){
+      console.log(`Hola me llamo ${this.name}`);
+
+}
 }
 
 console.log(animal);
@@ -34,14 +45,14 @@ console.log(animal2);
 function Animal(name, gender){
   this.name = name;
   this.gender = gender;
-  this.sonar= function(){
-    console.log('I make sounds cause i alive');//--> se debe asignar al prototipo de la funcion constructura Animal, el metodo sonar. Sacarlo, cada vez que se genera una nueva instancia (una nueva variable del tipo Animal) del objeto constructor Animal, se duplica ese metodo sonar en cada una de las instancias de los objetos. that will improve performance and memory space.(classes fix it with sugar sintax). 
+  // this.sonar= function(){
+  //   console.log('I make sounds cause i alive');//--> se debe asignar al prototipo de la funcion constructura Animal, el metodo sonar. Sacarlo, cada vez que se genera una nueva instancia (una nueva variable del tipo Animal) del objeto constructor Animal, se duplica ese metodo sonar en cada una de las instancias de los objetos. that will improve performance and memory space.(classes fix it with sugar sintax). 
 
   }
-  this.saludar =function(){
-    console.log(`Hola me llamo ${this.name}`);
-  }
-}
+  // this.saludar =function(){
+  //   console.log(`Hola me llamo ${this.name}`);
+  
+
 // Prototypical inheritance 
 
 function Perro(name, gender, size){
@@ -57,19 +68,38 @@ const lala = new Animal ('Lala', 'female');
 console.log(akiva);
 console.log(lala);
 
-// Methods added to contructure function --> for optimization 
-// Animal.prototype.sonar = function(){
-//   console.log('I make sounds cause i alive');
-// }
-// Animal.prototype.saludar = function(){
-//   console.log(`Hola me llamo ${this.nomnbre}`);
-// }
+// Methods added to contruction function --> for optimization 
+Animal.prototype.sonar = function(){
+  console.log('I make sounds cause i alive');
+}
+Animal.prototype.saludar = function(){
+  console.log(`Hola me llamo ${this.nomnbre}`);
+}
 
+// CLASSES --> Sugar Sintax
+class Animal2 {
+  constructor(name, gender){
+  this.name = name;
+  this.gender = gender;
+  }
+  bark(){
+    console.log(`Guaw, im ${this.gender}`);
+  }
+  greet(){
+    console.log(`my name is ${this.name}`);
+  }
+}
 
+const candela = new Animal2('Candela', 'Female');
+const bombon = new Animal2('Bombon', 'male');
 
-
-
-
+console.log(candela);
+console.log(bombon);
+candela.greet();
+candela.bark();
+bombon.greet();
+bombon.bark();
+*/
 
 
 
@@ -156,7 +186,6 @@ var obj = Object.create(Object.prototype);
     // Devuelve la clase
     // Tu código:
     // Usuario = {usuario: 'jssamuel', nombre: 'Samuel', email: 'samuel@email.com', password: 'LoveJS' }
-
 function crearUsuario() {
     function Usuario(opciones){
       this.usuario = opciones.usuario;
@@ -170,6 +199,11 @@ function crearUsuario() {
       }
       return Usuario; 
     }
+
+    
+
+
+
     //Example without function
     function Usuario(opciones){
       this.usuario = opciones.usuario;
